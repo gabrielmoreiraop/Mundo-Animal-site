@@ -1,0 +1,2 @@
+/** @type {import('tailwindcss').Config} */
+export default {content:['./index.html','./src/**/*.{js,jsx}'],theme:{extend:{fontFamily:{sans:['DM Sans','sans-serif'],display:['Manrope','sans-serif']},colors:{navy:'#082c57',ink:'#102d49',sky:'#e9f6ff',accent:'#36a5e8',muted:'#627589'},boxShadow:{soft:'0 16px 55px rgba(8,44,87,.08)',card:'0 9px 30px rgba(8,44,87,.07)'},borderRadius:{'3xl':'1.75rem'}}},plugins:[]}

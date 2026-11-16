@@ -1,0 +1,1 @@
+import {PawPrint,HeartPulse,Tractor,Sparkles,Leaf,Package} from 'lucide-react';const icons={bowl:Package,cross:HeartPulse,paw:PawPrint,tractor:Tractor,sparkles:Sparkles,leaf:Leaf};export default function CategoryIcon({name,size=23}){const Icon=icons[name]||PawPrint;return <Icon size={size} strokeWidth={1.8}/>}

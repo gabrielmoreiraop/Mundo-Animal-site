@@ -1,0 +1,2 @@
+import React from 'react';import {PawPrint} from 'lucide-react';import {Link} from 'react-router-dom';
+export default function Logo({light=false,footer=false}){return <Link aria-label="Mundo Animal — início" to="/" className={`brand ${light?'brand-light':''} ${footer?'brand-footer':''}`}><span className="brand-icon"><PawPrint size={25} strokeWidth={2.6}/></span><span className="brand-word"><strong>MUNDO <em>ANIMAL</em></strong><small>um mundo de cuidado</small></span></Link>}

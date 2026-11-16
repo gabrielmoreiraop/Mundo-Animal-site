@@ -1,42 +1,40 @@
-# Mundo Animal — Site institucional
+# Mundo Animal — Website institucional premium (versão 2)
 
-Projeto completo em **React + Vite + Tailwind CSS + Lucide React**.
+Site React + Vite, responsivo, com páginas Início, Produtos, Sobre nós e Contato. Identidade azul-marinho, azul claro e branco. Contém busca e filtro de categorias, WhatsApp, Instagram, Google Maps e navegação com React Router.
 
-## Executar localmente
-
-Requer Node.js 18+.
+## Rodar e publicar
 
 ```bash
 npm install
 npm run dev
-```
-
-Abra o endereço exibido no terminal (normalmente http://localhost:5173).
-
-## Criar versão de produção
-
-```bash
 npm run build
-npm run preview
 ```
 
-O build é gerado em `dist/`. Publicar com fallback de rotas SPA para `/index.html` (Vercel / Netlify / Cloudflare Pages, por exemplo).
+**Cloudflare Pages:** preset `React (Vite)`, build `npm run build`, diretório de saída `dist`, raiz `/`, branch `main`. O arquivo `public/_redirects` fornece fallback para as rotas internas React.
 
-## Organização
+## Atualizar o projeto antigo usando apenas iPhone e a-Shell
 
-- `src/pages/` — Início, Produtos, Sobre nós e Contato
-- `src/components/` — cabeçalho, rodapé, botões, cards, redes sociais e botão flutuante
-- `src/data/site.js` — dados comerciais e categorias demonstrativas
-- `src/style.css` e `tailwind.config.js` — identidade e estilos
+1. Baixe o arquivo `mundo-animal-v2-atualizacao.zip` e mova-o pelo app Arquivos para `No Meu iPhone > a-Shell > Documents`.
+2. Abra a-Shell e entre na pasta do projeto antigo: `cd mundo-animal` (se estiver em Documents).
+3. Descompacte a atualização por cima do projeto, preservando `.git`:
+   `python3 -m zipfile -e ../mundo-animal-v2-atualizacao.zip .`
+4. Prepare as alterações: `lg2 add .`
+5. Registre: `lg2 commit -m "Novo visual Mundo Animal"`
+6. Envie: `lg2 push origin master:main` (se a branch local continua `master`, como no procedimento anterior). Se solicitar Password, use um token GitHub com autorização apenas para esse repositório. Não compartilhe o token.
+7. Na Cloudflare Pages, a integração com GitHub deve iniciar nova compilação automaticamente. Verifique a aba de implantações. Se não houver projeto na conta Cloudflare atual, identifique o projeto e a conta proprietária antes de criar outro.
 
-## Atenção antes de publicar
+## Dados e fotos
 
-1. **Logotipo:** como não foi recebido arquivo de logotipo junto a este pedido, foi criada uma assinatura tipográfica provisória com ícone de pata. Para usar o logo real, coloque o arquivo em `public/images/logo-mundo-animal.png` e adapte `src/components/Brand.jsx` para exibi-lo.
-2. **Fotografias:** imagens editoriais ilustrativas externas (Unsplash) e não fotos da empresa, do estoque nem postagens reais. Substitua pelas imagens autorizadas antes da publicação final. Dependem de conexão à internet.
-3. **Catálogo:** cards demonstram categorias, não produtos efetivamente em estoque. Não foram criados preços, marcas ou medicamentos específicos.
-4. **Endereço:** Google Maps usa o endereço fornecido como busca; confirme o pin da loja antes de publicar.
-5. **Hospedagem:** não foi contratada hospedagem nem configurado domínio. O código está preparado para build e implantação.
-6. **Instagram:** a galeria usa imagens ilustrativas, não integração com feed oficial; link aponta para o perfil informado.
-7. **SEO:** título, descrição, Open Graph e idioma pt-BR configurados; uma implementação avançada pode incluir sitemap, domínio canônico e schema.org após definir a URL oficial.
+A marca visual é provisória, construída em texto/ícone, até receber o logotipo oficial em boa resolução. Fotos animais são ilustrativas e carregadas de URLs externas do Unsplash; antes da entrega comercial, substitua por imagens licenciadas adequadas, preferencialmente fotos autorizadas da loja. Nenhum produto, marca, preço, horário ou atendimento clínico foi inventado. Os produtos são **categorias demonstrativas**, não anúncios de estoque real. O endereço e os contatos foram fornecidos pelo solicitante e confirmados com fontes públicas; confira com o estabelecimento antes de publicar para o cliente.
 
-Contato e endereço conforme fornecidos pelo solicitante.
+## Substituições fáceis
+
+- Contatos e categorias: `src/data/site.js`
+- Marca provisória: `src/components/Logo.jsx`
+- Fotos ilustrativas: `src/data/site.js` (`photos`)
+- Páginas: `src/pages`
+- Estilos: `src/styles.css`
+
+## Observações
+
+O Google Maps pode solicitar autorização de cookies. Os links `https://wa.me/5522998659299`, `https://www.instagram.com/cra_mundo_animal/` e o link do perfil no Google Maps abrem em nova aba.
